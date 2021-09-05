@@ -9,5 +9,5 @@ fun main() {
     val gestor = GestorPersitance()
     println(gestor.obtenerPersona(2))
     gestor.cerrarEntity()
-    
+
 }

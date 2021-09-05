@@ -6,11 +6,11 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "personas")
-open class Persona {
+class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    open var id: Long? = null
+    var id: Long? = null
 
     @Column(nullable = false)
     val nombre: String? = null

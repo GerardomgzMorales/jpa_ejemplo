@@ -16,7 +16,8 @@
             <!-- Controlador de base de datos-->
             <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
             <!-- Dirección de la base de datos-->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/dbEjemplo"/>
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mariadb://localhost:3306/dbEjemplo2?createDatabaseIfNotExist=true"/>
             <!-- Nombre de usuario de la base de datos -->
             <property name="javax.persistence.jdbc.user" value="root"/>
             <!-- Contraseña de la base de datos -->
