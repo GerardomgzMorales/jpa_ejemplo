@@ -1,3 +1,4 @@
-INSERT INTO personas (id, nombre, direccion, fecha) VALUES (default, "Gerardo", "CDMX", now());
-INSERT INTO personas (id, nombre, direccion, fecha) VALUES (default, "Brenda", "EDOMEX", now());
-INSERT INTO personas (id, nombre, direccion, fecha) VALUES (default, "Israel", "Toluca", now());
+ALTER TABLE personas DEFAULT CHARSET=utf8;
+INSERT INTO personas (id, nombre, direccion, fecha,rfc) VALUES (default, "Gerardo", "CDMX", now(),'bubgcu');
+INSERT INTO personas (id, nombre, direccion, fecha,rfc) VALUES (default, "Brenda", "EDOMEX", now(),'cxwcdcwdc');
+INSERT INTO personas (id, nombre, direccion, fecha,rfc) VALUES (default, "Israel", "Toluca", now(),'njw223ewd');
