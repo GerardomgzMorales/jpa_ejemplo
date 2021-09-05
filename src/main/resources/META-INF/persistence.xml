@@ -28,7 +28,8 @@
             <property name="hibernate.show_sql" value="true"/>
             <!-- Si se muestra la instrucción sql-->
             <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto"
+                      value="update"/> <!-- el update solo valida si hya cambios en la DB pero no borra y crea de nuevo en la DB -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>
             <property name="hibernate.connection.characterEncoding" value="utf8"/>
             <property name="hibernate.connection.CharSet" value="utf8"/>

@@ -13,17 +13,17 @@ class Persona : Serializable {
     var id: Long? = null
 
     @Column(nullable = false, length = 50)
-    val nombre: String? = null
+    var nombre: String? = null
 
     @Column(nullable = false, length = 50)
-    val direccion: String? = null
+    var direccion: String? = null
 
     @Column(nullable = false)
     @Temporal(value = TemporalType.DATE)
-    val fecha: Date? = null
+    var fecha: Date? = null
 
     @Column(unique = true, length = 20)
-    val rfc: String? = null
+    var rfc: String? = null
 
 
     override fun toString(): String {
