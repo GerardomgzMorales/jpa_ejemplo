@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+
+    <!-- MariaDB-->
+    <persistence-unit name="ejemploKotlinJPA" transaction-type="RESOURCE_LOCAL">
+
+        <class>mx.historial.com.model.Persona</class>
+        <!--Configurar proveedor de servicios de especificación JPA
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> -->
+        <properties>
+            <!-- Controlador de base de datos-->
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+            <!-- Dirección de la base de datos-->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/dbEjemplo"/>
+            <!-- Nombre de usuario de la base de datos -->
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <!-- Contraseña de la base de datos -->
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+            <!-- Configuración opcional del proveedor jpa: nuestro proveedor de especificaciones JPA es hibernar, por lo
+            que la configuración central de jpa es compatible con hibernate-->
+            <property name="hibernate.show_sql" value="true"/>
+            <!-- Si se muestra la instrucción sql-->
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDB103Dialect"/>
+        </properties>
+    </persistence-unit>
+
+
+</persistence>
