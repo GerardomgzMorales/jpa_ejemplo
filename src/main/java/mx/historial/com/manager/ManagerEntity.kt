@@ -25,7 +25,6 @@ class ManagerEntity {
         val np = persona
         np.nombre = "Carolina Perez"
         np.fecha = GregorianCalendar(1995, 10, 3).time
-        println("antes de actualizar es: $np")
         return np
     }
 
