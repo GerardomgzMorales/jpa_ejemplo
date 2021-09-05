@@ -4,9 +4,7 @@ import mx.historial.com.model.Persona
 import javax.persistence.EntityManagerFactory
 import javax.persistence.Persistence
 
-class ManagerEntity {
-
-}
+class ManagerEntity
 
 fun main() {
     val facManager: EntityManagerFactory =
