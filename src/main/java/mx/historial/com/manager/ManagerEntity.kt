@@ -1,20 +1,13 @@
 package mx.historial.com.manager
 
-import mx.historial.com.model.Persona
-import javax.persistence.EntityManagerFactory
-import javax.persistence.Persistence
+import mx.historial.com.gestor.GestorPersitance
 
 class ManagerEntity
 
 fun main() {
-    val facManager: EntityManagerFactory =
-        Persistence.createEntityManagerFactory("ejemploKotlinJPA") //lee la config y sabe como crear
-    val em = facManager.createEntityManager()
 
-    println((em.find(Persona::class.java, "1".toLong()) as Persona))
-
-    em.clear()
-    em.close()
-
-
+    val gestor = GestorPersitance()
+    println(gestor.obtenerPersona(2))
+    gestor.cerrarEntity()
+    
 }
