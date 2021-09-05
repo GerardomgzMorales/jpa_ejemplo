@@ -6,4 +6,5 @@ interface ICrudPersona {
     fun crearPersona(persona: Persona): Boolean
     fun buscarPorIDPersona(id: Long): Persona?
     fun listarPersonas(): List<Persona>?
+    fun actualizarPersonas(persona: Persona): Boolean
 }

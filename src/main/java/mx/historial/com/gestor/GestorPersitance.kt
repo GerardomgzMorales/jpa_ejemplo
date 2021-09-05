@@ -51,5 +51,26 @@ class GestorPersitance : ICrudPersona {
         return listado
     }
 
+    override fun actualizarPersonas(persona: Persona): Boolean {
+        this.em = facManager?.createEntityManager()
+        val entTran = this.em?.transaction
+        entTran?.begin()
+
+        return try {
+            this.em?.persist(this.em?.merge(persona)) //merge mapea y compara los objetos de la DB para que se idetifiquen en la actualizacion
+            entTran?.commit()
+            println("\nPersonas actualizada.\n")
+            true
+        } catch (ex: Exception) {
+            println("\n El error en actualizacion es: ${ex.message} \n")
+            ex.printStackTrace()
+            false
+        } finally {
+            this.em?.close()
+        }
+
+
+    }
+
 
 }
