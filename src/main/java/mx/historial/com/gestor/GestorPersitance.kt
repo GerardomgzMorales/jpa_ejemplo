@@ -88,6 +88,4 @@ class GestorPersitance : ICrudPersona {
             this.em?.close()
         }
     }
-
-
 }
