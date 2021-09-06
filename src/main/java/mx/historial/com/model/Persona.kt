@@ -15,8 +15,9 @@ class Persona : Serializable {
     @Column(nullable = false, length = 50)
     var nombre: String? = null
 
-    @Column(nullable = false, length = 50)
-    var direccion: String? = null
+    @OneToOne(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "id", referencedColumnName = "id_direccion", nullable = false)
+    var direccion: Direccion? = null
 
     @Column(nullable = false)
     @Temporal(value = TemporalType.DATE)

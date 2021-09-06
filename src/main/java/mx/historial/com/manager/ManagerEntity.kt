@@ -1,13 +1,14 @@
 package mx.historial.com.manager
 
 import mx.historial.com.gestor.GestorPersitance
+import mx.historial.com.model.Direccion
 import mx.historial.com.model.Persona
 import java.util.*
 
 class ManagerEntity {
     fun crearNuevaPersona(): Persona {
         val persona = Persona()
-        persona.direccion = "Cuautitlan Izaclli"
+        persona.direccion = Direccion("Toreo 22", "Naucalpan", "EDOmEX", 3222)
         persona.fecha = Date()
         persona.rfc = "hjuefuy3e33"
         persona.nombre = "Pedro Soto Cacho"
@@ -31,23 +32,14 @@ class ManagerEntity {
 }
 
 fun main() {
-
     val mge = ManagerEntity()
     val gestor = GestorPersitance()
 
+    // gestor.crearPersona(mge.crearNuevaPersona())
 
-    println(gestor.crearPersona(mge.crearNuevaPersona()))
+    println(gestor.buscarPorIDPersona(1))
 
-    val np = gestor.buscarPorIDPersona(1)
-    println("\n $np \n")
-
-    gestor.listarPersonas()?.let { mge.mostrarPersonas(it) }
-
-    println(gestor.actualizarPersonas(mge.actualizacion(np!!)))
-
-    gestor.listarPersonas()?.let { mge.mostrarPersonas(it) }
 
 
     gestor.cerrarEntity()
-
 }
