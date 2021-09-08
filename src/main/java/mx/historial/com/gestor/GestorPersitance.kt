@@ -57,6 +57,7 @@ class GestorPersitance : ICrudPersona {
         entTran?.begin()
 
         return try {
+            this.em?.persist(this.em?.merge(persona.direccion))
             this.em?.persist(this.em?.merge(persona)) //merge mapea y compara los objetos de la DB para que se idetifiquen en la actualizacion
             entTran?.commit()
             println("\nPersonas actualizada.\n")

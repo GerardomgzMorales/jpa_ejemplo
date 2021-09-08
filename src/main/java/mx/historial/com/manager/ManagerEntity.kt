@@ -23,10 +23,10 @@ class ManagerEntity {
     }
 
     fun actualizacion(persona: Persona): Persona {
-        val np = persona
-        np.nombre = "Carolina Perez"
-        np.fecha = GregorianCalendar(1995, 10, 3).time
-        return np
+        persona.direccion = Direccion("Toreo 22", "Tlanepantla", "CDMX", 7845)
+        persona.nombre = "Antonio Aguilar"
+        persona.fecha = GregorianCalendar(1930, 11, 3).time
+        return persona
     }
 
 }
@@ -35,10 +35,15 @@ fun main() {
     val mge = ManagerEntity()
     val gestor = GestorPersitance()
 
-    // gestor.crearPersona(mge.crearNuevaPersona())
+    //gestor.crearPersona(mge.crearNuevaPersona())
 
-    println(gestor.buscarPorIDPersona(1))
-
+    var np = gestor.buscarPorIDPersona(1)
+    if (np != null) {
+        np = mge.actualizacion(np)
+        println("\n Persona Actualizada: $np")
+        gestor.actualizarPersonas(np)
+        println("\n Persona Actualizada ${np.id?.let { gestor.buscarPorIDPersona(it) }}")
+    }
 
 
     gestor.cerrarEntity()
